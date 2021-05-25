@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.3.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_3_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="it.vmt.gh.sb">
+	<namespace>gh</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="Environment" remote-service="true" uuid="true" cache-enabled="true" json-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="environmentId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="name" type="String" />
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Name" return-type="Environment">
+			<finder-column name="name" />
+		</finder>
+
+		<!-- References -->
+
+		<reference entity="AssetCategory" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+	<entity local-service="true" name="Profile" remote-service="true" uuid="true" cache-enabled="true" json-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="profileId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="code" type="String" />
+		<column name="name" type="String" />
+		<column name="price" type="double" />
+		<column name="img" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Name" return-type="Profile">
+			<finder-column name="name" />
+		</finder>
+
+		<finder name="Code" return-type="Profile">
+			<finder-column name="code" />
+		</finder>
+		<!-- References -->
+
+		<reference entity="AssetCategory" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+	<entity local-service="true" name="Carpentry" remote-service="true" uuid="true" cache-enabled="true" json-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="carpentryId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="code" type="String" />
+		<column name="name" type="String" />
+		<column name="img" type="String" />
+		<column name="price" type="double" />
+		<column name="shutters" type="int" />
+		<column name="specificationId" type="long" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Name" return-type="Carpentry">
+			<finder-column name="name" />
+		</finder>
+
+		<finder name="Code" return-type="Carpentry">
+			<finder-column name="code" />
+		</finder>
+
+		<!-- References -->
+
+		<reference entity="AssetCategory" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+	<entity local-service="true" name="Profile_Carpentry" remote-service="true" uuid="true" cache-enabled="true" json-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="profileId" primary="true" type="long" />
+		<column name="carpentryId" primary="true" type="long" />
+
+
+		<!-- Finder methods -->
+
+		<finder name="Profile" return-type="Collection">
+			<finder-column name="profileId" />
+		</finder>
+
+		<finder name="Carpentry" return-type="Collection">
+			<finder-column name="carpentryId" />
+		</finder>
+
+	</entity>
+	<entity local-service="true" name="Handle" remote-service="true" uuid="true" cache-enabled="true" json-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="handleId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="code" type="String" />
+		<column name="name" type="String" />
+		<column name="price" type="double" />
+		<column name="img" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Name" return-type="Handle">
+			<finder-column name="name" />
+		</finder>
+
+		<finder name="Code" return-type="Handle">
+			<finder-column name="name" />
+		</finder>
+		<!-- References -->
+
+		<reference entity="AssetCategory" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+	
+	<entity local-service="true" name="Item" remote-service="true" uuid="true" cache-enabled="true" json-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="itemId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="displayDate" type="Date" />
+
+		<!-- References fields -->
+
+		<column name="environmentId" type="long" />
+		<column name="profileId" type="long" />
+		<column name="carpentryId" type="long" />
+		<column name="handleId" type="long" />
+		<column name="colorId" type="long" />
+		<column name="cartId" type="long" />
+		<column name="qty" type="int" />
+		<column name="price" type="double" />
+		<column name="width" type="double" />
+		<column name="height" type="double" />
+		<column name="color" type="String" />
+		
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Cart" return-type="Collection">
+			<finder-column name="cartId" />
+		</finder>
+
+		<finder name="Environment" return-type="Collection">
+			<finder-column name="environmentId" />
+		</finder>
+
+		<finder name="Profile" return-type="Collection">
+			<finder-column name="profileId" />
+		</finder>
+
+		<finder name="Carpentry" return-type="Collection">
+			<finder-column name="carpentryId" />
+		</finder>
+
+		<finder name="Handle" return-type="Collection">
+			<finder-column name="handleId" />
+		</finder>
+		<!-- References -->
+
+		<reference entity="AssetCategory" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+	<entity local-service="true" name="Cart" remote-service="true" uuid="true" cache-enabled="true" json-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="cartId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="displayDate" type="Date" />
+
+		<!-- References fields -->
+
+		<column name="total" type="double" />
+		<column name="invoiceDiscount" type="boolean" />
+		<column name="vat" type="double" />
+		<column name="totalWithVat" type="double" />
+		<column name="discountedTotal" type="double" />
+		<column name="offerId" type="long" />
+		<column name="invoiceId" type="long" />
+		<column name="installation" type="boolean" />
+		<column name="installationTotal" type="double" />
+		<column name="delivery" type="boolean" />
+		<column name="deliveryTotal" type="double" />
+
+		<!-- Status fields -->
+
+		<column name="status" type="int" />
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="User" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+
+		<!-- References -->
+
+		<reference entity="AssetCategory" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+	<entity local-service="true" name="Color" remote-service="true" uuid="true" cache-enabled="true" json-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="colorId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="name" type="String" />
+		<column name="code" type="String" />
+		<column name="img" type="String" />
+		<column name="charge" type="int" />
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Name" return-type="Color">
+			<finder-column name="name" />
+		</finder>
+
+		<!-- References -->
+
+		<reference entity="AssetCategory" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+
+</service-builder>

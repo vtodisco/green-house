@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="it.vmt.gh.sb.model.Carpentry">
+		<field name="uuid" type="String" />
+		<field name="carpentryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="name" type="String" />
+		<field name="img" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="price" type="double" />
+		<field name="shutters" type="int" />
+		<field name="specificationId" type="long" />
+	</model>
+	<model name="it.vmt.gh.sb.model.Cart">
+		<field name="uuid" type="String" />
+		<field name="cartId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="displayDate" type="Date" />
+		<field name="total" type="double" />
+		<field name="invoiceDiscount" type="boolean" />
+		<field name="vat" type="double" />
+		<field name="totalWithVat" type="double" />
+		<field name="discountedTotal" type="double" />
+		<field name="offerId" type="long" />
+		<field name="invoiceId" type="long" />
+		<field name="installation" type="boolean" />
+		<field name="installationTotal" type="double" />
+		<field name="delivery" type="boolean" />
+		<field name="deliveryTotal" type="double" />
+		<field name="status" type="int" />
+	</model>
+	<model name="it.vmt.gh.sb.model.Color">
+		<field name="uuid" type="String" />
+		<field name="colorId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="code" type="String" />
+		<field name="img" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="charge" type="int" />
+	</model>
+	<model name="it.vmt.gh.sb.model.Environment">
+		<field name="uuid" type="String" />
+		<field name="environmentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+	</model>
+	<model name="it.vmt.gh.sb.model.Handle">
+		<field name="uuid" type="String" />
+		<field name="handleId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="name" type="String" />
+		<field name="price" type="double" />
+		<field name="img" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+	</model>
+	<model name="it.vmt.gh.sb.model.Item">
+		<field name="uuid" type="String" />
+		<field name="itemId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="displayDate" type="Date" />
+		<field name="environmentId" type="long" />
+		<field name="profileId" type="long" />
+		<field name="carpentryId" type="long" />
+		<field name="handleId" type="long" />
+		<field name="colorId" type="long" />
+		<field name="cartId" type="long" />
+		<field name="qty" type="int" />
+		<field name="price" type="double" />
+		<field name="width" type="double" />
+		<field name="height" type="double" />
+		<field name="color" type="String" />
+	</model>
+	<model name="it.vmt.gh.sb.model.Profile">
+		<field name="uuid" type="String" />
+		<field name="profileId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="name" type="String" />
+		<field name="price" type="double" />
+		<field name="img" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+	</model>
+	<model name="it.vmt.gh.sb.model.Profile_Carpentry">
+		<field name="uuid" type="String" />
+		<field name="profileId" type="long" />
+		<field name="carpentryId" type="long" />
+	</model>
+</model-hints>

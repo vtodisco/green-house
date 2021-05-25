@@ -1,0 +1,10 @@
+Bundle-Name: green-house-sb-api
+Bundle-SymbolicName: it.vmt.gh.sb.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	it.vmt.gh.sb.exception,\
+	it.vmt.gh.sb.model,\
+	it.vmt.gh.sb.service,\
+	it.vmt.gh.sb.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../green-house-sb-service/service.xml

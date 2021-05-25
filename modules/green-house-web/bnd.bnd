@@ -1,0 +1,8 @@
+Bundle-Name: green-house-web
+Bundle-SymbolicName: it.vmt.gh.web.portlet
+Bundle-Version: 1.0.0
+Export-Package: it.vmt.gh.web.portlet.constants
+-jsp: *.jsp,*.jspf
+-plugin.bundle: com.liferay.ant.bnd.resource.bundle.ResourceBundleLoaderAnalyzerPlugin
+-plugin.jsp: com.liferay.ant.bnd.jsp.JspAnalyzerPlugin
+-sources: true

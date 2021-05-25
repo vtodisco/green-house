@@ -1,0 +1,4 @@
+Bundle-Name: green-house-pdf-api
+Bundle-SymbolicName: it.vmt.gh.pdf.api
+Bundle-Version: 1.0.0
+Export-Package: it.vmt.gh.pdf.api

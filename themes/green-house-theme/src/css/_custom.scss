@@ -1,0 +1,14 @@
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+
+/* endinject */
+
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+
+@import 'custom_variables/_custom_variables';
+@import 'custom_components/_panel';
+@import 'custom_components/_card';
+
+@import '_specifics';
+@import '_overrides';

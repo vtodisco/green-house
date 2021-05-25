@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false">
+	<import class="it.vmt.gh.sb.model.Carpentry" />
+	<import class="it.vmt.gh.sb.model.Cart" />
+	<import class="it.vmt.gh.sb.model.Color" />
+	<import class="it.vmt.gh.sb.model.Environment" />
+	<import class="it.vmt.gh.sb.model.Handle" />
+	<import class="it.vmt.gh.sb.model.Item" />
+	<import class="it.vmt.gh.sb.model.Profile" />
+	<import class="it.vmt.gh.sb.model.Profile_Carpentry" />
+	<class name="it.vmt.gh.sb.model.impl.CarpentryImpl" table="gh_Carpentry">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="carpentryId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="createDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="code_" name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="img" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="price" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="shutters" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="specificationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.vmt.gh.sb.model.impl.CartImpl" table="gh_Cart">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="cartId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="createDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="displayDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="total" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="invoiceDiscount" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="vat" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="totalWithVat" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="discountedTotal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="offerId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="invoiceId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="installation" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="installationTotal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="delivery" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="deliveryTotal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="it.vmt.gh.sb.model.impl.ColorImpl" table="gh_Color">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="colorId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="createDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="code_" name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="img" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="charge" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="it.vmt.gh.sb.model.impl.EnvironmentImpl" table="gh_Environment">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="environmentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="createDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.vmt.gh.sb.model.impl.HandleImpl" table="gh_Handle">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="handleId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="createDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="code_" name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="price" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="img" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.vmt.gh.sb.model.impl.ItemImpl" table="gh_Item">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="itemId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="createDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="displayDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="environmentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="profileId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="carpentryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="handleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="colorId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="cartId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="qty" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="price" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="width" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="height" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="color" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.vmt.gh.sb.model.impl.ProfileImpl" table="gh_Profile">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="profileId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="createDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="code_" name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="price" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="img" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.vmt.gh.sb.model.impl.Profile_CarpentryImpl" table="gh_Profile_Carpentry">
+		<composite-id class="it.vmt.gh.sb.service.persistence.Profile_CarpentryPK" name="primaryKey">
+			<key-property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="profileId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="carpentryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

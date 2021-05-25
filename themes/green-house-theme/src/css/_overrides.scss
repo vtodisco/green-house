@@ -1,0 +1,55 @@
+body {
+    font-family: $main-font-family;
+}
+@media (min-width: 576px){
+    body .has-control-menu .affix, .has-control-menu #wrapper {
+        margin-top: 41px;
+    }
+}
+
+.navbar-classic .navbar-form {
+    padding-top: 8px;
+}
+
+.navbar-classic.navbar-light {
+    background-color: $secondary-bg-color;
+    color: $primary-color;
+    margin-bottom: 50px;
+    margin-top: 66px;
+}
+.navbar-light .navbar-nav .active > .nav-link{
+    color: $primary-color;
+    margin-top: 7px;
+    padding: 0px;
+    padding-top: 7px;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: $primary-color;
+    margin-top: 7px;
+    padding: 0px;
+    padding-top: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    color: $primary-color;
+}
+
+.tree-node-content {
+    border-left: 2px solid $secondary-color;
+}
+
+.tree-node-content.tree-node-leaf {
+    border-left: 2px solid $secondary-border-color;
+    font-size: 20px;
+}
+
+.tree-node-content .tree-hitarea {
+    font-size: 20px;
+}
+
+.portlet-layout{
+    margin-top: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+}

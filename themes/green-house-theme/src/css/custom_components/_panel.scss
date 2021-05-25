@@ -1,0 +1,13 @@
+.image-container {
+    background-repeat: no-repeat;
+    min-height: 60px;
+}
+.panel-container {
+    border: 1px solid $secondary-color;
+}
+.panel-heading {
+    height: 100px;
+}
+.panel-body {
+    min-height: 250px;
+}

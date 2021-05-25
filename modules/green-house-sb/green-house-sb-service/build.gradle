@@ -1,0 +1,14 @@
+dependencies {
+	compileOnly project(":modules:green-house-sb:green-house-sb-api")
+	compileOnly project(":modules:green-house-pdf-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	compileOnly group: "javax.mail", name: "mail", version: "1.4"
+	
+}
+
+buildService {
+	apiDir = "../green-house-sb-api/src/main/java"
+}
+
+group = "it.vmt.gh.sb"
